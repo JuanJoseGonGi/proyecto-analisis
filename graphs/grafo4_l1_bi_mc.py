@@ -3,7 +3,7 @@ import pyphi
 import numpy as np
 
 pyphi.config.load_file(
-    os.path.dirname(__file__) + '../config/pyphi_config_l1_bi.yml')
+    os.path.dirname(__file__) + '/../config/pyphi_config_l1_bi.yml')
 
 tpm = np.array([[0, 0, 0, 0, 0], [0, 0, 1, 0, 0], [0, 0, 0, 1, 0],
                 [0, 0, 1, 1, 0], [0, 0, 0, 1, 0], [0, 0, 1, 1, 0],
