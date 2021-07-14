@@ -1,7 +1,9 @@
+import os
 import pyphi
 import numpy as np
 
-pyphi.config.load_file('./Config_Files/pyphi_config_emd_tri.yml')
+pyphi.config.load_file(
+    os.path.dirname(__file__) + '../config/pyphi_config_emd_bi.yml')
 
 tpm = np.array([
     [0, 0, 0],
@@ -14,8 +16,13 @@ tpm = np.array([
     [1, 1, 0],
 ])
 
+cm = np.array([
+    [0, 0, 1],
+    [1, 0, 1],
+    [1, 1, 0],
+])
 labels = ('A', 'B', 'C')
-network = pyphi.Network(tpm, node_labels=labels)
+network = pyphi.Network(tpm, cm=cm, node_labels=labels)
 state = (1, 0, 0)
 node_indices = (0, 1, 2)
 subsystem = pyphi.Subsystem(network, state, node_indices)
