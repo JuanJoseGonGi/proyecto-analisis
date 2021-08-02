@@ -3,7 +3,7 @@
 export PYPHI_WELCOME_OFF='yes'
 
 for graph in $(ls graphs); do
-  echo "----------"
-  echo $graph
-  python graphs/$graph
+  echo "----------" >>results_sh.txt
+  echo $graph >>results_sh.txt
+  python graphs/$graph >>results_sh.txt
 done
