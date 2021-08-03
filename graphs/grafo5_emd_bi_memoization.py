@@ -3,14 +3,31 @@ import pyphi
 import numpy as np
 
 pyphi.config.load_file(
-    os.path.dirname(__file__) + '/../config/pyphi_config_emd_bi.yml')
+    os.path.dirname(__file__) + "/../config/pyphi_config_emd_bi_memoization.yml"
+)
 
-tpm = np.array([[0, 0, 0, 0], [0, 1, 1, 1], [1, 0, 1, 0], [1, 1, 0, 1],
-                [0, 1, 0, 0], [0, 1, 1, 1], [1, 1, 1, 0], [1, 1, 0, 1],
-                [0, 0, 0, 0], [0, 1, 1, 1], [1, 0, 1, 0], [1, 1, 0, 1],
-                [0, 1, 0, 0], [0, 1, 1, 1], [1, 1, 1, 0], [1, 1, 0, 1]])
+tpm = np.array(
+    [
+        [0, 0, 0, 0],
+        [0, 1, 1, 1],
+        [1, 0, 1, 0],
+        [1, 1, 0, 1],
+        [0, 1, 0, 0],
+        [0, 1, 1, 1],
+        [1, 1, 1, 0],
+        [1, 1, 0, 1],
+        [0, 0, 0, 0],
+        [0, 1, 1, 1],
+        [1, 0, 1, 0],
+        [1, 1, 0, 1],
+        [0, 1, 0, 0],
+        [0, 1, 1, 1],
+        [1, 1, 1, 0],
+        [1, 1, 0, 1],
+    ]
+)
 
-labels = ('A', 'B', 'C', 'D')
+labels = ("A", "B", "C", "D")
 network = pyphi.Network(tpm, node_labels=labels)
 state = (0, 1, 0, 0)
 node_indices = (0, 1, 2, 3)

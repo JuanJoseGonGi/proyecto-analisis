@@ -2,7 +2,9 @@ import os
 import pyphi
 import numpy as np
 
-pyphi.config.load_file(os.path.dirname(__file__) + "/../config/pyphi_config_emd_bi.yml")
+pyphi.config.load_file(
+    os.path.dirname(__file__) + "/../config/pyphi_config_emd_bi_memoization.yml"
+)
 
 tpm = np.array(
     [
